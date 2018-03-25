@@ -11,31 +11,39 @@ nav grey: #5b5e6d;
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*, *::before, *::after {
   box-sizing: inherit;
 }
-
-body {
+* {
   margin: 0;
   padding: 0;
 }
 
+/**
+nav, div, ul, img, h1, h2, p, article {
+  border: 1px solid black;
+}
+**/
 
 /* ---- typography ---- */
 
 body {
   background-color: #F4F3F4;
   margin: 0 10px;
-  width: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(50, 50, 50);
 }
 
 h1 {
   color: #2C303F;
   font-size: 3em;
+  font-family: serif;
 }
 h2{
   color: #2C303F;
   font-size: 2em;
+  font-family: serif;
+  margin-bottom: 6px;
 }
 
 p {
@@ -45,52 +53,233 @@ p {
 
 /*------nav------*/
 
-nav {
+.nav-bar {
+  height: 10vh;
   position: fixed;
   top: 0;
-  background-color:blue;
-  
+  background-color: white; 
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  align-items: center;
 }
 
-nav img {
+.logo-img {
   width: 15%;
-  float: left;
+    
+}
+.logo-img img{
+  width: 100%;
+  margin-top: 5px;
 }
 
-nav ul {
-  list-style: none;
-  float: right;
+nav ul {  
+  width: 85%;
+  list-style: none;  
+  display: flex;
+  justify-content: flex-end;
 }
 
 nav ul li{
-  display: inline-block;
+  margin-left: 5px;
+  width: 25%;
+  text-align: center;
+  align-self: center;
 }
 
 /*------header-----*/
 
-header h1 {
-  padding-top: 100px;
+header {
+  margin-bottom: 18px;
 }
-header button {
-  width: 80%;
+
+header h1 {
+  padding-top: 10vh;  
+}
+header p{
+  margin-bottom: 12px;
+}
+header form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6px;
+
+}
+input {
+  width: 300px;
+  padding: 3px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+
+}
+.button {
+  width: 300px;  
   background-color: #192592;
   color: #ffffff;
   padding: 15px 0;
   border-radius: 10px;
-  margin: 0 auto;
+  
   
 }
+.small-p {
+  text-align: center;
+  font-size: 0.8em;
+  margin-bottom: 6px;
+}
+header img {
+  width: 100vw;
+}
 
-header button+p {
+
+/*----------main ----------*/
+.companies {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.description h2 {  
+  text-align: center;
+  margin-bottom: 12px;
+}
+.description p {
+  text-align: center; 
+  margin-bottom: 18px;
+}
+.companies button {
+  color: #192592;
+  border-color: #192592;
+  background-color: #ffffff;
+  margin-bottom: 12px;
+}
+.companies img {
+  width: 60vw;
+  padding: 20px 0px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 6px;
+}
+.main-bottom {
   text-align: center;
 }
 
+/*--------------------footer--------------------*/
+
+footer img.slak-logo {
+  width: 30%;
+}
+.footer-lists {
+  display: flex;
+  flex-wrap: wrap;  
+}
+.footer-lists ul {
+  list-style: none;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  width: 50%;
+}
+.footer-lists ul li:first-child {
+  font-weight: bold;
+}
+.bottom-footer {
+  text-align: center;
+}
+div.bottom-footer ul {  
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+div.bottom-footer ul li {
+  padding-left: 10px;
+}
+ div.fontawesome {
+   display: fex;      
+   margin-bottom: 20px;   
+ }
+ 
+ div.fontawesome img {
+   width: 1.2em;
+ }
+
+ /*-------------MEDIA QUERIE----------------------
+ ------------------------------------------------*/
+
+@media (min-width: 600px) {
+  body {
+    padding: 0 50px;
+  }
+ .nav-bar {
+   width: 100vw;
+   
+ }
+ .nav-menu li {
+   border: 1px solid rgba(128, 128, 128, .3);
+   border-radius: 5px;
+   cursor: pointer;
+ }
+ .nav-menu li:hover {
+   background-color: rgb(220, 220, 220);
+ }
+ /**----------header-----------*/
+ header {
+   display: flex;
+   flex-direction: row-reverse;
+ }
+ header h1 {
+   font-size: 4em;
+   padding-top: 10vh;
+ }
+ header img {
+   width: 50vw; 
+ }
+
+ /**------------------main-------*/
+ main {
+   margin-bottom: 50px;
+ }
+
+ .logos {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+ }
+ .logos article{
+   width: 26%;
+   padding: 0 60px;
+ }
+ .logos img {
+   width: 120px;
+ }
+ div.main-bottom {
+   display: flex;
+   justify-content: space-between;
+
+ }
+ div.main-bottom>div{
+   display: flex;
+   flex-direction: column;
+ }
+
+ /*-------------footer--------------*/
+footer img.slak-logo {
+  width: 50%;
+  margin-top: -30px;
+}
+
+footer>div {
+  display: flex;
+
+}
+footer div.footer-lists {
+ width: 80%;
+}
+footer div.footer-lists ul {
+  margin-right: 20px;
+  width: 22%;
+}
+
+.bottom-footer {
+  justify-content: space-between;
+}
 
 
-
-
-
-
-img {
-  width: 50%
 }
